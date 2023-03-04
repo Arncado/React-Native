@@ -7,6 +7,8 @@ import * as Animatable from "react-native-animatable";
 const RenderCampsite = (props) => {
   const { campsite } = props;
 
+  const isRightSwipe = ({ dx }) => dx > 200;
+
   const view = useRef();
 
   const isLeftSwipe = ({ dx }) => dx < -200;
@@ -42,6 +44,8 @@ const RenderCampsite = (props) => {
           ],
           { cancelable: false }
         );
+      } else if (isRightSwipe(gestureState)) {
+        props.onShowModal();
       }
     },
   });

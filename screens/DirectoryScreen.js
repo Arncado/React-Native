@@ -26,7 +26,7 @@ const DirectoryScreen = ({ navigation }) => {
           title={campsite.name}
           caption={campsite.description}
           featured
-          onPress={() => navigation.navigate("CampsiteInfo", { campsite })}
+          onPress={() => navigation.navigate("CampsiteInfo", { campsite })} 
           imageSrc={{ uri: baseUrl + campsite.image }}
         />
       </Animatable.View>
